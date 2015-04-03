@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html>
+<head>
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+	
+	<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="http://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+	<!-- <link rel="Stylesheet" type="text/css" href="/css/sidebar.css" /> -->
+	<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>	
+	<body>
+		<nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+			<ul class="nav navbar-nav">
+				<!-- <li class="dropdown">
+			          <a href="#" class="dropdown-toggle navbar-brand " data-toggle="dropdown">Ecosphere <span class="caret"></span></a>
+			          <ul class="dropdown-menu" role="menu">
+			            <li><a href="#">Action</a></li>
+			            <li><a href="#">Another action</a></li>
+			            <li><a href="#">Something else here</a></li>
+			            <li class="divider"></li>
+			            <li><a href="#">Separated link</a></li>
+			            <li class="divider"></li>
+			            <li><a href="#">One more separated link</a></li>
+			          </ul>
+       			</li> -->
+        	
+				<li class="active">
+					<a href="/usermain">Experiments</a>
+				</li>
+				<li>
+					<a href="https://apprtc.appspot.com/" target="_blank" style="target-new: tab;"target="_blank">Phone Camera View</a>
+				</li>
+				<li class="right">
+					<a href="{{logoutURL}}">Logout</a>
+				</li>
+				
+			</ul>
+			
+		</nav>
+		<br><br><br>
+
+		<div class="panel panel-default">
+ 	 		<div class="panel-heading">
+    			<h1>Experiments</h1>
+  			</div>
+ 	 		<div class="panel-body">
+ 	 			<table>
+	    			<div class="row">
+	    				<tr>
+		  					<div class="col-xs-6 col-md-3">
+		    					<a href="/simulatewalk" class="thumbnail">
+		      						<img align="middle" style="width:200px;height:200px"  src="http://findicons.com/files/icons/2770/ios_7_icons/128/walking.png" alt="Simulate Walking" title="Simulate Walking">
+		      						<div class="caption" align="middle">
+		        						<h3>Simulate Walking</h3>
+		      						</div>
+		    					</a>
+		  					</div>
+	  					</tr>
+					</div>
+				</table>
+  			</div>
+		</div>
+		
+
+
+	</body>
+</html>
+{% endautoescape %}

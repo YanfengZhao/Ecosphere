@@ -5,6 +5,8 @@ from google.appengine.ext import ndb
 import urllib
 import jinja2
 import os
+import json
+import urllib2
 
 JINJA_ENVIRONMENT = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -27,8 +29,23 @@ class MainPage(webapp2.RequestHandler):
 class UserMain(webapp2.RequestHandler):
 	def get(self):
 		logoutURL = users.create_logout_url('/')
-		self.response.write('<a href="%s">logout</a>' %logoutURL)
+
+		template_values = {'logoutURL': logoutURL}
+		template = JINJA_ENVIRONMENT.get_template('usermain.html')
+
+		self.response.write(template.render(template_values))
+
+class SimulateWalk(webapp2.RequestHandler):
+	def get(self):
+		data = {'action':'walk'}
+		req = urllib2.Request('http://192.168.1.100:81/')
+		req.add_header('Content-Type', 'application/json')
+
+		response = urllib2.urlopen(req, json.dumps(data))
+		print response
+
 application = webapp2.WSGIApplication([
     ('/', MainPage),
-    ('/usermain',UserMain)
+    ('/usermain',UserMain),
+    ('/simulatewalk',SimulateWalk)
 ], debug=True)
