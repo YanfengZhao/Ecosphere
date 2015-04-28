@@ -55,13 +55,29 @@ class StopAll(webapp2.RequestHandler):
 
 class AnglePositionHandler(webapp2.RequestHandler):
 	def post(self):
-		angle1=self.request.get("angle1")
-		angle2=self.request.get("angle2")
-		angle3=self.request.get("angle3")
-		position1=self.request.get("position1")
-		position2=self.request.get("position2")
-		position3=self.request.get("position3")
-		data = {'angle1':angle1,'angle2':angle2,'angle3':angle3,'position1':position1,'position2':position2,'position3':position3}
+		servoX=self.request.get("servoX")
+		servoY=self.request.get("servoY")
+		servoZ=self.request.get("servoZ")
+		motorX=self.request.get("motorX")
+		motorY=self.request.get("motorY")
+		motorZ=self.request.get("motorZ")
+		servoSpeedX=self.request.get("servoSpeedX")
+		servoSpeedY=self.request.get("servoSpeedY")
+		servoSpeedZ=self.request.get("servoSpeedZ")
+		motorSpeedX=self.request.get("motorSpeedX")
+		motorSpeedY=self.request.get("motorSpeedY")
+		motorSpeedZ=self.request.get("motorSpeedZ")
+
+		new_servo_request_finish = "1"
+		new_motor_request_finish = "1"
+		if servoX != "0" or servoY != "0" or servoZ != "0" or servoSpeedX != "0" or servoSpeedY != "0" or servoSpeedZ != "0":
+			new_servo_request_finish = "0"
+		if motorX != "0" or motorY != "0" or motorZ != "0" or motorSpeedX != "0" or motorSpeedY != "0" or motorSpeedZ != "0":
+			new_motor_request_finish = "0"
+		
+		data = {'servoX':servoX,'servoY':servoY,'servoZ':servoZ,'motorX':motorX,'motorY':motorY,'motorZ':motorZ,
+		"servoSpeedX":servoSpeedX,"servoSpeedY":servoSpeedY,"servoSpeedZ":servoSpeedZ,"motorSpeedX":motorSpeedX,"motorSpeedY":motorSpeedY,
+		"motorSpeedZ":motorSpeedZ,"new_servo_request_finish":new_servo_request_finish,"new_motor_request_finish":new_motor_request_finish}
 		header = { 'Content-Type' : "application/json"}
 		req = urllib2.Request('http://192.168.1.100:81/',data=json.dumps(data))
 		response = urllib2.urlopen(req)

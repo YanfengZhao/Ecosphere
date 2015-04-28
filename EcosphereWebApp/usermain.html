@@ -46,41 +46,47 @@
   			</div>
  	 		<div class="panel-body">
  	 			<form role="form" action="/anglePositionHandler" method="post">
-					<!-- <div class="form-group">
-						<label for="angle1">Angle 1:</label>
-						<input type="text" class="form-control" placeholder="Enter angle 1" name="angle1">
+					<div class="form-group">
+						<label>Enter Servo Angles/Speeds:</label>
+						<div>
+							<label>Servo X Angle</label>
+							<input type="text" class="form-control" placeholder="Servo X" name="servoX" value="0">
+							<label>Servo X Speed (0-9)</label>
+							<input type="text" class="form-control" placeholder="Servo X Speed (0-9)" name="servoSpeedX" value="0">
+						</div>
+						<div>
+							<label>Servo Y Angle</label>
+							<input type="text" class="form-control" placeholder="Servo Y" name="servoY" value="0">
+							<label>Servo Y Speed (0-9)</label>
+							<input type="text" class="form-control" placeholder="Servo Y Speed (0-9)" name="servoSpeedY" value="0">
+						</div>
+						<div>
+							<label>Servo Z Angle</label>
+							<input type="text" class="form-control" placeholder="Servo Z" name="servoZ" value="0">
+							<label>Servo Z Speed (0-9)</label>
+							<input type="text" class="form-control" placeholder="Servo Z Speed (0-9)" name="servoSpeedZ" value="0">
+						</div>
 					</div>
 					<div class="form-group">
-						<label for="angle2">Angle 2:</label>
-						<input type="text" class="form-control" placeholder="Enter angle 2" name="angle2">
-					</div>
-					<div class="form-group">
-						<label for="angle3">Angle 3:</label>
-						<input type="text" class="form-control" placeholder="Enter angle 3" name="angle3">
-					</div>
-					<div class="form-group">
-						<label for="position1">Position 1:</label>
-						<input type="text" class="form-control" placeholder="Enter position 1" name="position1">
-					</div>
-					<div class="form-group">
-						<label for="position2">Position 2:</label>
-						<input type="text" class="form-control" placeholder="Enter position 2" name="position2">
-					</div>
-					<div class="form-group">
-						<label for="position3">Position 3:</label>
-						<input type="text" class="form-control" placeholder="Enter position 3" name="position3">
-					</div> -->
-					<div class="form-group">
-						<label for="angles">Enter Angles:</label>
-						<input type="text" class="form-control" placeholder="Enter angle 1" name="angle1">
-						<input type="text" class="form-control" placeholder="Enter angle 2" name="angle2">
-						<input type="text" class="form-control" placeholder="Enter angle 3" name="angle3">
-					</div>
-					<div class="form-group">
-						<label for="positions">Enter positions:</label>
-						<input type="text" class="form-control" placeholder="Enter position 1" name="position1">
-						<input type="text" class="form-control" placeholder="Enter position 2" name="position2">
-						<input type="text" class="form-control" placeholder="Enter position 3" name="position3">
+						<label>Enter Motor Angles/Speeds:</label>
+						<div>
+							<label>Motor X Angle</label>
+							<input type="text" class="form-control" placeholder="Motor X" name="motorX" value="0">
+							<label>Motor X Speed (0-9)</label>
+							<input type="text" class="form-control" placeholder="Motor X Speed (0-9)" name="motorSpeedX" value="0">
+						</div>
+						<div>
+							<label>Motor Y Angle</label>
+							<input type="text" class="form-control" placeholder="Motor Y" name="motorY" value="0">
+							<label>Motor Y Speed (0-9)</label>
+							<input type="text" class="form-control" placeholder="Motor Y Speed (0-9)" name="motorSpeedY" value="0">
+						</div>
+						<div>
+							<label>Motor Z Angle</label>
+							<input type="text" class="form-control" placeholder="Motor Z" name="motorZ" value="0">
+							<label>Motor Z Speed (0-9)</label>
+							<input type="text" class="form-control" placeholder="Motor Z Speed (0-9)" name="motorSpeedZ" value="0">
+						</div>
 					</div>
 					
 					<button type="submit" class="btn btn-default pull-right">Submit</button>
