@@ -37,17 +37,39 @@ class UserMain(webapp2.RequestHandler):
 
 class SimulateWalk(webapp2.RequestHandler):
 	def get(self):
-		data = {'simulate_Walk':'True'}
+		data = {'work_Mode':'1'}
 		header = { 'Content-Type' : "application/json"}
 		req = urllib2.Request('http://192.168.1.100:81/',data=json.dumps(data))
 		response = urllib2.urlopen(req)
 		print response
 
-		#print urllib2.urlopen("http://192.168.1.100:81/").read()
+class Videos(webapp2.RequestHandler):
+	def get(self):
+		data = {'work_Mode':'2'}
+		header = { 'Content-Type' : "application/json"}
+		req = urllib2.Request('http://192.168.1.100:81/',data=json.dumps(data))
+		response = urllib2.urlopen(req)
+		print response
+
+class Images(webapp2.RequestHandler):
+	def get(self):
+		data = {'work_Mode':'3'}
+		header = { 'Content-Type' : "application/json"}
+		req = urllib2.Request('http://192.168.1.100:81/',data=json.dumps(data))
+		response = urllib2.urlopen(req)
+		print response
+
+class ServosMove(webapp2.RequestHandler):
+	def get(self):
+		data = {'work_Mode':'4'}
+		header = { 'Content-Type' : "application/json"}
+		req = urllib2.Request('http://192.168.1.100:81/',data=json.dumps(data))
+		response = urllib2.urlopen(req)
+		print response
 
 class StopAll(webapp2.RequestHandler):
 	def get(self):
-		data = {'stop':'all'}
+		data = {'work_Mode':'9'}
 		header = { 'Content-Type' : "application/json"}
 		req = urllib2.Request('http://192.168.1.100:81/',data=json.dumps(data))
 		response = urllib2.urlopen(req)
@@ -77,15 +99,20 @@ class AnglePositionHandler(webapp2.RequestHandler):
 		
 		data = {'servoX':servoX,'servoY':servoY,'servoZ':servoZ,'motorX':motorX,'motorY':motorY,'motorZ':motorZ,
 		"servoSpeedX":servoSpeedX,"servoSpeedY":servoSpeedY,"servoSpeedZ":servoSpeedZ,"motorSpeedX":motorSpeedX,"motorSpeedY":motorSpeedY,
-		"motorSpeedZ":motorSpeedZ,"new_servo_request_finish":new_servo_request_finish,"new_motor_request_finish":new_motor_request_finish}
+		"motorSpeedZ":motorSpeedZ,"new_servo_request_finish":new_servo_request_finish,"new_motor_request_finish":new_motor_request_finish, "work_Mode":"0"}
 		header = { 'Content-Type' : "application/json"}
 		req = urllib2.Request('http://192.168.1.100:81/',data=json.dumps(data))
 		response = urllib2.urlopen(req)
 		print response
+
+
 application = webapp2.WSGIApplication([
     ('/', MainPage),
     ('/usermain',UserMain),
     ('/simulatewalk',SimulateWalk),
     ('/stopAll',StopAll),
-    ('/anglePositionHandler',AnglePositionHandler)
+    ('/anglePositionHandler',AnglePositionHandler),
+    ('/videos',Videos),
+    ('/images',Images),
+    ('/servosMove',ServosMove)
 ], debug=True)

@@ -12,19 +12,7 @@
 	<body>
 		<nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
 			<ul class="nav navbar-nav">
-				<!-- <li class="dropdown">
-			          <a href="#" class="dropdown-toggle navbar-brand " data-toggle="dropdown">Ecosphere <span class="caret"></span></a>
-			          <ul class="dropdown-menu" role="menu">
-			            <li><a href="#">Action</a></li>
-			            <li><a href="#">Another action</a></li>
-			            <li><a href="#">Something else here</a></li>
-			            <li class="divider"></li>
-			            <li><a href="#">Separated link</a></li>
-			            <li class="divider"></li>
-			            <li><a href="#">One more separated link</a></li>
-			          </ul>
-       			</li> -->
-        	
+				
 				<li class="active">
 					<a href="/usermain">Experiments</a>
 				</li>
@@ -45,7 +33,57 @@
     			<h1>Experiments</h1>
   			</div>
  	 		<div class="panel-body">
- 	 			<form role="form" action="/anglePositionHandler" method="post">
+ 	 			
+ 	 			<table>
+	    			<div class="row">
+	    				<tr>
+	    					
+		  					<div class="col-xs-6 col-md-3">
+		    					<a href="/simulatewalk" class="thumbnail">
+		      						<img align="middle" style="width:100px;height:100px"  src="http://findicons.com/files/icons/2770/ios_7_icons/128/walking.png" alt="Simulate Walking" title="Simulate Walking">
+		      						<div class="caption" align="middle">
+		        						<h3>Simulate Walking</h3>
+		      						</div>
+		    					</a>
+		  					</div>
+		  					<div class="col-xs-6 col-md-3">
+		    					<a href="/images" class="thumbnail">
+		      						<img align="middle" style="width:100px;height:100px"  src="http://uxrepo.com/static/icon-sets/ionicons/svg/camera.svg" alt="Images" title="Images">
+		      						<div class="caption" align="middle">
+		        						<h3>Images</h3>
+		      						</div>
+		    					</a>
+		  					</div>
+		  					<div class="col-xs-6 col-md-3">
+		    					<a href="/videos" class="thumbnail">
+		      						<img align="middle" style="width:100px;height:100px"  src="http://www.aiche.org/sites/default/files/styles/aiche_content/public/images/page/lead/VideosSymbol.png?itok=cFP67tqE" alt="Videos" title="Videos">
+		      						<div class="caption" align="middle">
+		        						<h3>Videos</h3>
+		      						</div>
+		    					</a>
+		  					</div>
+		  					<div class="col-xs-6 col-md-3">
+		    					<a href="/servosMove" class="thumbnail">
+		      						<img align="middle" style="width:100px;height:100px"  src="http://hitecrcd.com/images/products/full/153_1_HS-5087MH_HV_Premium_Digital_Metal_Gear_Micro_Servo.jpg" alt="Servos Move" title="Servos Move">
+		      						<div class="caption" align="middle">
+		        						<h3>Servos Move</h3>
+		      						</div>
+		    					</a>
+		  					</div>
+	  					</tr>
+					</div>
+				</table>
+				
+			</div>	
+			<div class="span7 center">
+		    					<a href="/stopAll" class="thumbnail">
+		      						<img align="middle" style="width:100px;height:100px"  src="http://www.safetysupplywarehouse.com/v/vspfiles/photos/WFS3-2.jpg" alt="Stop Tests and Reset" title="Stop Tests and Reset">
+		      						<div class="caption" align="middle">
+		        						<h3>Stop Tests and Reset</h3>
+		      						</div>
+		    					</a>
+		  		</div>
+ 	 			<form class="form-inline" role="form" action="/anglePositionHandler" method="post">
 					<div class="form-group">
 						<label>Enter Servo Angles/Speeds:</label>
 						<div>
@@ -91,29 +129,8 @@
 					
 					<button type="submit" class="btn btn-default pull-right">Submit</button>
 				</form>
- 	 			<table>
-	    			<div class="row">
-	    				<tr>
-	    					<div class="col-xs-6 col-md-3">
-		    					<a href="/stopAll" class="thumbnail">
-		      						<img align="middle" style="width:200px;height:200px"  src="http://www.safetysupplywarehouse.com/v/vspfiles/photos/WFS3-2.jpg" alt="Stop Tests and Reset" title="Stop Tests and Reset">
-		      						<div class="caption" align="middle">
-		        						<h3>Stop Tests and Reset</h3>
-		      						</div>
-		    					</a>
-		  					</div>
-		  					<div class="col-xs-6 col-md-3">
-		    					<a href="/simulatewalk" class="thumbnail">
-		      						<img align="middle" style="width:200px;height:200px"  src="http://findicons.com/files/icons/2770/ios_7_icons/128/walking.png" alt="Simulate Walking" title="Simulate Walking">
-		      						<div class="caption" align="middle">
-		        						<h3>Simulate Walking</h3>
-		      						</div>
-		    					</a>
-		  					</div>
-	  					</tr>
-					</div>
-				</table>
-  			</div>
+ 	 			
+  			
 		</div>
 		
 
